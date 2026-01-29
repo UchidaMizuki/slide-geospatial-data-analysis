@@ -19,3 +19,19 @@ read_file_land_price_2025 <- function(
       all_of(shape_property_table2_land_price_2025$属性コード)
     )
 }
+
+get_land_price_2025 <- function(land_price_2025_raw) {
+  land_price_2025_raw |>
+    rename(
+      city_code = `標準地番号：行政区域コード`,
+      land_price_JPY_per_m2 = 地価公示価格,
+      front_road_width_m = `前面道路の状況：幅員`,
+      road_distance_to_nearest_station_m = `交通施設、距離：最寄り駅迄の道路距離`
+    ) |>
+    select(
+      city_code,
+      land_price_JPY_per_m2,
+      front_road_width_m,
+      road_distance_to_nearest_station_m
+    )
+}

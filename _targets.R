@@ -28,8 +28,11 @@ tar_plan(
   shape_property_table2_land_price_2025 = read_file_shape_property_table2_land_price_2025(
     file_shape_property_table2 = file_shape_property_table2
   ),
-  land_price_2025 = read_file_land_price_2025(
+  land_price_2025_raw = read_file_land_price_2025(
     file_land_price_2025 = file_land_price_2025,
     shape_property_table2_land_price_2025 = shape_property_table2_land_price_2025
   ),
+  land_price_2025 = get_land_price_2025(
+    land_price_2025_raw = land_price_2025_raw
+  )
 )
