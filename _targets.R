@@ -34,5 +34,16 @@ tar_plan(
   ),
   land_price_2025 = get_land_price_2025(
     land_price_2025_raw = land_price_2025_raw
-  )
+  ),
+
+  # model-land-price
+  data_land_price = get_data_land_price(
+    land_price = land_price_2025
+  ),
+  model_glm_land_price = get_model_glm_land_price(
+    data_land_price = data_land_price
+  ),
+  mesh_land_price = get_mesh_land_price(
+    data_land_price = data_land_price
+  ),
 )
