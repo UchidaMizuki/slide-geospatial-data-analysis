@@ -43,6 +43,9 @@ tar_plan(
   model_glm_land_price = get_model_glm_land_price(
     data_land_price = data_land_price
   ),
+  nb_data_land_price = get_nb_data_land_price(
+    data_land_price = data_land_price
+  ),
   mesh_land_price = get_mesh_land_price(
     data_land_price = data_land_price
   ),

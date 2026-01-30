@@ -34,6 +34,12 @@ get_model_glm_land_price <- function(data_land_price) {
   )
 }
 
+get_nb_data_land_price <- function(data_land_price) {
+  data_land_price |>
+    select(X, Y) |>
+    spdep::tri2nb()
+}
+
 get_mesh_land_price <- function(data_land_price) {
   sdmTMB::make_mesh(
     data_land_price,
